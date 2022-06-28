@@ -6,9 +6,10 @@ library(shiny)
 #write.csv(airquality,'airquality.csv')
 #rm(airquality)
 airquality= read.csv('airquality.csv', header = T)
+airquality=as.data.frame(airquality)
 airquality=airquality[,-1]
-airquality=na.omit(airquality)
-
+w=which(is.na(airquality))
+airquality=airquality[-w,]
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
   
