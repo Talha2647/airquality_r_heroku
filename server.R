@@ -4,7 +4,6 @@ server <- function(input, output) {
   
   
   output$distPlot <- renderPlot({
-    airquality$Ozone=na.omit(airquality$Ozone)
     df=switch( EXPR = input$data
                , "Ozone" =airquality$Ozone
                , "Solar.R" =airquality$Solar.R
